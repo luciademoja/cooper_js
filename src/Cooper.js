@@ -13,22 +13,33 @@ CooperTest.prototype.testResults = function (obj) {
   }
 };
 
+Number.prototype.between = function(a, b) {
+  var min = Math.min.apply(Math, [a, b]),
+    max = Math.max.apply(Math, [a, b]);
+  return this >= min && this <= max;
+};
+
 function maleResults (obj) {
   var ranges = getRanges(obj);
-
-  var mDistanceOne = obj.distance >= 2700;
-  // var mDistanceTwo = obj.distance >= 2400 && <= 2699;
-  // var mDistanceThree = obj.distance >= 2200 && <= 2399;
-  // var mDistanceFour = obj.distance >= 2100 && <= 2199;
-  // var mDistanceFive = obj.distance <= 2100;
+  var distance = obj.distance;
+  var mDistances = {
+    one: distance >= 2700,
+    two: distance.between(2400, 2699),
+    three: distance.between(2200, 2399),
+    four: distance.between(2100, 2199),
+    five: distance <= 2100
+  };
 
   if(ranges.one) {
-    if(obj.distance >= 2700) {
+    if(mDistances.one) {
       obj.message = "Very Good";
     }
   }
-  if(ranges.two && mDistanceOne) {
+  if(ranges.two && mDistances.one) {
     obj.message = "Good";
+  }
+  if(ranges.three && mDistances.two) {
+    obj.message = "Average";
   }
 }
 
