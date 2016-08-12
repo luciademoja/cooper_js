@@ -27,8 +27,14 @@ function maleResults (obj) {
   // var mDistanceFour = obj.distance >= 2100 && <= 2199;
   // var mDistanceFive = obj.distance <= 2100;
 
-
-  if(rangeOne && mDistanceOne) {
+  console.log(rangeOne)
+  console.log(rangeTwo)
+  if(rangeOne) {
+    if(obj.distance >= 2700) {
       obj.message = "Very Good"
+    }
+  }
+  if(rangeTwo && mDistanceOne) {
+    obj.message = "Good"
   }
 };
