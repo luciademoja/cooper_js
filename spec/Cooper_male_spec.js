@@ -192,7 +192,7 @@ describe("Cooper Test: Male", function() {
 
   describe("Age range over 50", function() {
     beforeEach(function() {
-      person.age = 42;
+      person.age = 55;
     });
     it("Assess Very Good result when running 2400m or more", function() {
       person.distance = 2500;

@@ -190,3 +190,163 @@ function maleResults (obj) {
     }
   }
 }
+
+function femaleResults (obj) {
+  var ranges = getRanges(obj);
+  var distance = obj.distance;
+  var fDistRangeOne = {one: distance >= 2000,
+                      two: distance.between(1900, 200),
+                      three: distance.between(1600, 1899),
+                      four: distance.between(1500, 1599),
+                      five: distance < 1500};
+  var fDistRangeTwo = {one: distance >= 2100,
+                      two: distance.between(2000, 2099),
+                      three: distance.between(1700, 1999),
+                      four: distance.between(1600, 1699),
+                      five: distance < 1600};
+  var fDistRangeThree = {one: distance >= 2300,
+                      two: distance.between(2100, 2299),
+                      three: distance.between(1800, 2099),
+                      four: distance.between(1700, 1799),
+                      five: distance < 1700};
+  var fDistRangeFour = {one: distance >= 2700,
+                      two: distance.between(2200, 2699),
+                      three: distance.between(1800, 2199),
+                      four: distance.between(1500, 1799),
+                      five: distance < 1500};
+  var fDistRangeFive = {one: distance >= 2500,
+                      two: distance.between(2000, 2499),
+                      three: distance.between(1700, 1899),
+                      four: distance.between(1400, 1699),
+                      five: distance < 1400};
+  var fDistRangeSix = {one: distance >= 2300,
+                      two: distance.between(1900, 2299),
+                      three: distance.between(1500, 1899),
+                      four: distance.between(1200, 1499),
+                      five: distance < 1200};
+  var fDistRangeSeven = {one: distance >= 2200,
+                      two: distance.between(1700, 2199),
+                      three: distance.between(1400, 1699),
+                      four: distance.between(1100, 1399),
+                      five: distance < 1100};
+
+  if(ranges.one) {
+    if(fDistRangeOne.one) {
+    obj.message = "Very Good";
+    }
+    if(fDistRangeOne.two) {
+    obj.message = "Good";
+    }
+    if(fDistRangeOne.three) {
+    obj.message = "Average";
+    }
+    if(fDistRangeOne.four) {
+    obj.message = "Bad";
+    }
+    if(fDistRangeOne.five) {
+    obj.message = "Very Bad";
+    }
+  }
+  if(ranges.two) {
+    if(fDistRangeTwo.one) {
+    obj.message = "Very Good";
+    }
+    if(fDistRangeTwo.two) {
+    obj.message = "Good";
+    }
+    if(fDistRangeTwo.three) {
+    obj.message = "Average";
+    }
+    if(fDistRangeTwo.four) {
+    obj.message = "Bad";
+    }
+    if(fDistRangeTwo.five) {
+    obj.message = "Very Bad";
+    }
+  }
+  if(ranges.three) {
+    if(fDistRangeThree.one) {
+    obj.message = "Very Good";
+    }
+    if(fDistRangeThree.two) {
+    obj.message = "Good";
+    }
+    if(fDistRangeThree.three) {
+    obj.message = "Average";
+    }
+    if(fDistRangeThree.four) {
+    obj.message = "Bad";
+    }
+    if(fDistRangeThree.five) {
+    obj.message = "Very Bad";
+    }
+  }
+  if(ranges.four) {
+    if(fDistRangeFour.one) {
+    obj.message = "Very Good";
+    }
+    if(fDistRangeFour.two) {
+    obj.message = "Good";
+    }
+    if(fDistRangeFour.three) {
+    obj.message = "Average";
+    }
+    if(fDistRangeFour.four) {
+    obj.message = "Bad";
+    }
+    if(fDistRangeFour.five) {
+    obj.message = "Very Bad";
+    }
+  }
+  if(ranges.five) {
+    if(fDistRangeFive.one) {
+    obj.message = "Very Good";
+    }
+    if(fDistRangeFive.two) {
+    obj.message = "Good";
+    }
+    if(fDistRangeFive.three) {
+    obj.message = "Average";
+    }
+    if(fDistRangeFive.four) {
+    obj.message = "Bad";
+    }
+    if(fDistRangeFive.five) {
+    obj.message = "Very Bad";
+    }
+  }
+  if(ranges.six) {
+    if(fDistRangeSix.one) {
+    obj.message = "Very Good";
+    }
+    if(fDistRangeSix.two) {
+    obj.message = "Good";
+    }
+    if(fDistRangeSix.three) {
+    obj.message = "Average";
+    }
+    if(fDistRangeSix.four) {
+    obj.message = "Bad";
+    }
+    if(fDistRangeSix.five) {
+    obj.message = "Very Bad";
+    }
+  }
+  if(ranges.seven) {
+    if(fDistRangeSeven.one) {
+    obj.message = "Very Good";
+    }
+    if(fDistRangeSeven.two) {
+    obj.message = "Good";
+    }
+    if(fDistRangeSeven.three) {
+    obj.message = "Average";
+    }
+    if(fDistRangeSeven.four) {
+    obj.message = "Bad";
+    }
+    if(fDistRangeSeven.five) {
+    obj.message = "Very Bad";
+    }
+  }
+}
