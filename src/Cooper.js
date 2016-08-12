@@ -1,17 +1,17 @@
 function CooperTest(){
 };
 
-  CooperTest.prototype.testResults = function (obj) {
-    var gender = obj.gender;
-    var age = obj.age;
-    var distance = obj.distance;
+CooperTest.prototype.testResults = function (obj) {
+  var gender = obj.gender;
+  var age = obj.age;
+  var distance = obj.distance;
 
-    if(obj.gender === 'male'){
-      maleResults(obj);
-    }else {
-      femaleResults(obj);
-    }
-  };
+  if(obj.gender === 'male'){
+    maleResults(obj);
+  }else {
+    femaleResults(obj);
+  }
+};
 
 function maleResults (obj) {
   var rangeOne = obj.age >= 13 && obj.age <= 14;
@@ -27,14 +27,12 @@ function maleResults (obj) {
   // var mDistanceFour = obj.distance >= 2100 && <= 2199;
   // var mDistanceFive = obj.distance <= 2100;
 
-  console.log(rangeOne)
-  console.log(rangeTwo)
   if(rangeOne) {
     if(obj.distance >= 2700) {
-      obj.message = "Very Good"
+      obj.message = "Very Good";
     }
   }
   if(rangeTwo && mDistanceOne) {
-    obj.message = "Good"
+    obj.message = "Good";
   }
-};
+}
